@@ -1,0 +1,52 @@
+{
+  "main": "electron/main.cjs",
+  "build": {
+    "appId": "com.vivek.ipocustomermanagement",
+    "productName": "IPO Customer Management",
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "output": "release"
+    },
+    "win": {
+      "target": "nsis"
+    }
+  },
+  "name": "frontend",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build --base=./",
+    "preview": "vite preview",
+    "electron:start": "npm run build && electron electron/main.cjs",
+    "electron:windows": "npm run build && electron-builder --win nsis"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.5.3",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "electron": "^44.7.0",
+    "electron-builder": "^26.15.3",
+    "typescript": "~6.0.2",
+    "vite": "^8.1.1"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.5.3",
+    "@capacitor/core": "^8.5.3",
+    "@capacitor/filesystem": "^8.1.4",
+    "@capacitor/share": "^8.0.3",
+    "axios": "^1.18.1",
+    "dexie": "^4.4.6",
+    "jspdf": "^4.2.1",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-router-dom": "^7.18.2"
+  },
+  "electron:start": "npm run build && electron electron/main.cjs",
+  "electron:windows": "npm run build && electron-builder --win nsis"
+}
